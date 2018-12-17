@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+ /* $myGray1: #f8f9fa; */
+
+ @font-face {
+   font-family: 'matchbook';
+   src: url('matchbook-webfont.woff2') format('woff2'),
+     url('matchbook-webfont.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: 'myunderwood';
+   src: url('myunderwood-webfont.woff2') format('woff2'),
+     url('myunderwood-webfont.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: '1942';
+   src: url('1942-webfont.woff2') format('woff2'),
+     url('1942-webfont.woff') format('woff');
+ }
+
+
+ * {
+   margin:0;
+   padding:0;
+ }
+
+ html, body {
+   height:100%;
+   font-size: 16px;
+   box-sizing: border-box;
+ }
+
+ body {
+  /* background-image: linear-gradient(to bottom right, rgba(255,255,255,0), rgba(150,150,150,1)); */
+
+    box-shadow: inset 0 0 8em 1em rgba(0,0,0,0.3);
+
+}
+
+ h1, h2, h3, a {
+   font-family: "Courier New", Courier, monospace;
+   color: #505050;
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+ a:hover {
+   font-weight: bold;
+ }

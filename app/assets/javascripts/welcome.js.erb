@@ -1,0 +1,101 @@
+$(document).ready(function(){
+
+  var size = 64;
+  var t = 0;
+  var speed = 10/60;
+  var count = 0;
+  var cycles = 0.5;
+  var rndPxl = 0;
+  var rndX = Math.round(size/2);
+  var rndY = 0;
+  var imgInt = 0;
+  var coin = 0;
+  var myCanvas = document.getElementById('canvas--welcome');
+  var ctx = myCanvas.getContext('2d');
+
+  myCanvas.width = size;
+  myCanvas.height = size;
+
+    var drawCanvas = function() {
+      // draw levels/gradient
+      for(y = 0; y <= size-1; y++) {
+        // for each row, determine grey level
+        // var intensity = Math.floor(mysine((y + t) * cycles, size) * 255);
+        var intensity = Math.floor(mysine((y + t) * cycles, size) * 215);
+        ctx.fillStyle = "rgb(" + intensity + "," + intensity + "," + intensity + ")";
+        for(x = 0; x <= size-1; x++) {
+          // fill in the columns
+          ctx.fillRect(x, size-1-y, 1, 1);
+        }
+      }
+
+      if (count % 4 == 0) {
+        // rndX = Math.floor(Math.random()*size);
+        // rndY = Math.floor(Math.random()*size);
+
+        var imgData = ctx.getImageData(rndX,rndY,1,1);
+        imgInt = imgData.data[0];
+
+        // x-coord random walk
+        // right margin
+        if (rndX == size-1){
+          coin = Math.floor(Math.random()*2);
+          if (coin == 1) {
+            rndX = rndX - 1;
+          } else {
+            rndX = rndX + 0;
+          }
+          // left margin
+        } else if (rndX == 0) {
+          coin = Math.floor(Math.random()*2);
+          if (coin == 1) {
+            rndX = rndX + 1;
+          } else {
+            rndX = rndX + 0;
+          }
+          // somewhere in the middle
+        } else {
+          coin = Math.floor(Math.random()*3);
+          if (coin == 0) {
+            rndX = rndX - 1;
+          } else if (coin == 1) {
+            rndX = rndX + 1;
+          } else {
+             rndX = rndX + 0;
+          }
+        } // rndX
+
+        // y-coord random walk
+        if (rndY == 0){
+          rndY = size-1;
+        } else {
+          rndY = rndY - 1;
+        } // rndY
+
+      } // count
+
+      // ctx.fillStyle = "rgb(0,0,255,0.2)";
+
+      imgInt = imgInt + 40;
+
+      ctx.fillStyle = "rgb(" + imgInt + "," + imgInt + "," + imgInt + ", 0.1)";
+      // ctx.fillStyle = "rgb(0,0,255,0.4)";
+      ctx.fillRect(rndX, rndY, 1, 1);
+
+      // update t and request next frame
+      t = t + speed;
+      count = count + 1;
+      // imgInt = imgInt - 1;
+      window.requestAnimationFrame(drawCanvas);
+  }
+
+
+  var mysine = function(whichStep, nSteps) {
+    // return( Math.sin( whichStep * Math.PI * 2 / nSteps ) / 2 + 0.5 );
+    return( Math.sin( whichStep / nSteps * Math.PI * 2) / 2 + 0.5 );
+
+  }
+
+ drawCanvas();
+
+});
