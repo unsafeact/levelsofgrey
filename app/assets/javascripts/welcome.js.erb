@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+  // landingpage animation, only if the canvas exists
+  if($('#canvas--welcome').length >0 ){
+    welcomeAnimation()
+  }
+
+});
+
+
+welcomeAnimation = function(){
+
   var size = 64;
   var t = 0;
   var speed = 10/60;
@@ -98,4 +108,4 @@ $(document).ready(function(){
 
  drawCanvas();
 
-});
+}

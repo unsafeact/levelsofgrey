@@ -2,21 +2,21 @@
 
 <div class = "welcome__wrapper">
     <div class = "welcome__title" >
-      <a href id = "welcome-title">levels of grey</a>
+      <!-- <a href id = "welcome-title">levels of grey</a> -->
+
+      <%= link_to "levelsofgrey", home_main_path, :id=> "welcome-title"%>
+
+
       </div>
     <div class = "welcome__menu">
       <div class = "welcome__menu--item">
-        <a href="">levelsofgrey</a>
+        <%= link_to "levelsofgrey", home_main_path %>
       </div>
       <div class = "welcome__menu--item">
-        <!-- <a href="">about</a> -->
-        <%= link_to "About", home_about_path %>
-
+        <%= link_to "about", home_about_path %>
       </div>
       <div class = "welcome__menu--item">
-        <a href="">impressum</a>
-
-
+        <%= link_to "impressum", home_impressum_path %>
       </div>
    </div>
 </div>
