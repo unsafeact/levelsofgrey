@@ -1,6 +1,115 @@
-#banner--typewiter {
-  color: red;
-height: 300px;
-background-color: yellow;
-  background-image: url(<%= asset_path 'log-banner-typewriter.jpg' %>) ;
+.navigation {
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  // justify-content: flex-end;
+  justify-content: space-between;
+
+}
+
+.navigation a {
+  display: block;
+  padding: 0 0 0 1rem;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+
+  }
+
+  .navigation a {
+    padding: 0.5rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  }
+
+}
+
+.centered {
+  margin: 1rem 1rem 0 1rem;
+}
+
+.cards {
+  column-count: 3;
+  -webkit-column-count: 3;
+  column-gap: 0;
+  -webkit-column-gap: 0;
+}
+
+.card {
+  -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+                 break-inside: avoid;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 0 1rem 1rem 0;
+  background-color: var(--col-1-light)
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 var(--col-2-dark);
+}
+
+.card-image-33, .card-image-66, .card-image-100{
+  display: block;
+  height: auto;
+  margin: 0.5rem auto 0.5rem auto;
+}
+
+.card-image-33 {
+  max-width: 33%;
+}
+
+.card-image-66 {
+  max-width: 66%;
+}
+
+.card-image-100 {
+  max-width: 100%;
+}
+
+.card-header {
+  text-align: center;
+  background-color: var(--col-2-dark);
+  padding: 0.2rem;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 0.5rem 0 0 0;
+
+}
+
+.card-footer {
+  padding: 0.2rem;
+  background-color: var(--col-1-light);
+  text-align: center;
+  font-size: smaller;
+}
+
+.intend {
+  text-indent: 1rem;
+}
+
+#card-1 {
+  background-color: var(--col-2-light);
 }

@@ -1,5 +1,137 @@
-<div id = "banner--typewriter">
+<header>
+  <%= render  "navigation" %>
+</header>
 
+<div class="centered">
 
+  <section class="cards">
 
-</div>
+    <article class="card" id ="card-1">
+      <div class="card-header">Welcome!</div>
+      <div class="card-body">
+        <p>My name is Uwe Friese, and this website is my web development playground.
+        </p>
+        <p class="intend">Technically, I am a psychologist with a PhD in cognitive science. My research focuses on the cognitive neuroscience of memory. You can find my scientific papers at <%= link_to "ResearchGate", "https://www.researchgate.net/profile/Uwe_Friese", :target => "_blank" %>.
+        </p>
+        <p class="intend">The following cards show some private projects I have built for fun and learning. Things you won't find here because they suck: hoverable multilevel dropdown menus and links to F*book or the bird site.
+        </p>
+        <%= image_tag("globe-ripples.png", class: "card-image-33")%>
+      </div>
+
+    </article><!-- /card-1 -->
+
+    <article class="card">
+      <div class="card-header">Lecture about mass communication</div>
+      <div class="card-body">
+        <p>This talk is based on a seminar I held at the University of Osnabrueck. It introduces the cognitive psychology of mass communication to a broader audience. (Link coming soon!)</p>
+        <%= image_tag("masscomm.png", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: javascript, reveal.js</p>
+      </div>
+    </article><!-- /card-2 -->
+
+    <article class="card">
+      <div class="card-header">Fake web store</div>
+      <div class="card-body">
+        <p>Main achievement of the Webdev course I took. Hosted on <%= link_to "Heroku", "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %></p>
+
+        <%= link_to image_tag("fake-web-store.png", class: "card-image-66"), "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %>
+
+      </div>
+      <div class="card-footer">
+        <p>Tools: Rails, PostgreSQL, Devise, Redis, Stripe</p>
+      </div>
+    </article><!-- /card-3 -->
+
+    <article class="card">
+      <div class="card-header">Fake portfolio page</div>
+      <div class="card-body">
+        <p>My first static webpage within the scope of a Webdev course I took. Hosted on <%= link_to "Netlify", "https://peter-pirx.netlify.com/", :target => "_blank" %></p>
+
+        <%= link_to image_tag("fake-portfolio-page", class: "card-image-66"), "https://peter-pirx.netlify.com/", :target => "_blank" %>
+
+      </div>
+      <div class="card-footer">
+        <p>Tools: HTML, CSS, Javascript</p>
+      </div>
+    </article><!-- /card-4 -->
+
+    <article class="card">
+      <div class="card-header">Simple javascript game</div>
+      <div class="card-body">
+        <p>Politically incorrect frogger clone featuring multiple Horsts</p>
+        <%= link_to image_tag("welcome-game.png", class: "card-image-66"), "https://", :target => "_blank" %>
+      </div>
+      <div class="card-footer">
+        <p>Tools: phaser.js</p>
+      </div>
+    </article><!-- /card-5 -->
+
+    <article class="card">
+      <div class="card-header">Playing with the Web Audio API</div>
+      <div class="card-body">
+        <p>Monty Python style...</p>
+        <%= image_tag("moo.jpg", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: javascript, web audio API</p>
+      </div>
+    </article><!-- /card-6 -->
+
+    <article class="card">
+      <div class="card-header">This website</div>
+      <div class="card-body">
+        <p>I am self-hosting levelsofgrey.com on a VPS running Ubuntu Server 16.04.</p>
+        <%= image_tag("log-screenshot.png", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: Linux, Rails, Capistrano</p>
+      </div>
+    </article><!-- /card-7 -->
+
+    <article class="card">
+      <div class="card-header">Non-digital cigar box guitar</div>
+      <div class="card-body">
+        <%= image_tag("cbg.jpg", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: saws, chisels, planes, drills,...</p>
+      </div>
+    </article><!-- /card-8 -->
+
+    <article class="card">
+      <div class="card-header">Non-digital mod for a Vikings fan</div>
+      <div class="card-body">
+        <%= image_tag("hawk-mod.png", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: sandpaper, acetone, coffee & vinegar...</p>
+      </div>
+    </article><!-- /card-9 -->
+
+    <article class="card">
+      <div class="card-header">Non-digital boards</div>
+      <div class="card-body">
+        <p>Two of ten longboards I have built in recent years.</p>
+        <%= image_tag("boards.jpg", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: saw, press, glue, plane,...</p>
+      </div>
+    </article><!-- /card-10 -->
+
+    <article class="card">
+      <div class="card-header">In progress: Grandma's smart picture frame</div>
+      <div class="card-body">
+        <p>A Raspberry Pi, attached to a display, boots into a full-screen browser and loads a default webpage. On this page, family members can upload folders with pictures and short texts. Basic navigation is possible with a remote control (a simple gamepad).</p>
+        <%= image_tag("grandmapi.jpg", class: "card-image-66")%>
+      </div>
+      <div class="card-footer">
+        <p>Tools: Raspberry Pi</p>
+      </div>
+    </article><!-- /card-11 -->
+
+  </section><!-- cards -->
+
+</div> <!-- centered -->

@@ -14,6 +14,39 @@
  *= require_self
  */
 
+:root {
+  // //primary palette
+  // --grey-50: #FAFAFA;
+  // --grey-100: #F5F5F5;
+  // --grey-200: #EEEEEE;
+  // --grey-300: #E0E0E0;
+  // --grey-400: #BDBDBD;
+  // --grey-500: #9E9E9E;
+  // --grey-600: #757575;
+  // --grey-700: #616161;
+  // --grey-800: #424242;
+  // --grey-900: #212121;
+  // //secondary palette
+  // --orange-50: #FAFAFA;
+  // --orange-100: #F5F5F5;
+  // --orange-200: #EEEEEE;
+  // --orange-300: #E0E0E0;
+  // --orange-400: #BDBDBD;
+  // --orange-500: #9E9E9E;
+  // --orange-600: #757575;
+  // --orange-700: #616161;
+  // --orange-800: #424242;
+  // --orange-900: #212121;
+  //selection
+  --col-1: #EEEEEE;
+  --col-1-light: #ffffff;
+  --col-1-dark: #bcbcbc;
+  --col-1-text: #444444;
+  --col-2: #ffe0b2;
+  --col-2-light: #ffffe4;
+  --col-2-dark: #cbae82;
+  --col-2-text: #000000;
+}
 
  @font-face {
    font-family: 'matchbook';
@@ -40,27 +73,52 @@
  }
 
  html, body {
-   height:100%;
+   height:100vh;
    font-size: 16px;
    box-sizing: border-box;
+   color: var(--col-1-text);
  }
 
  body {
-  /* background-image: linear-gradient(to bottom right, rgba(255,255,255,0), rgba(150,150,150,1)); */
+    font-family: "Courier New", Courier, monospace;
+    // font-family: "Verdana", Geneva, sans-serif;
 
-    box-shadow: inset 0 0 8em 1em rgba(0,0,0,0.3);
-
+    background-color: var(--col-1);
 }
 
- h1, h2, h3, a {
+
+h1, h2, h3 {
    font-family: "Courier New", Courier, monospace;
-   color: #505050;
+   margin-top: 1rem;
+ }
+
+ h4, h5 {
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 0.5rem;
+  }
+
+ h1 {
+   text-align: center;
+   margin-bottom: 2rem;
+
  }
 
  a {
-   text-decoration: none;
+   // border-bottom: 1px dotted var(--col-1-text);
+   text-decoration-style: dotted;
+   color: var(--col-1-text);
  }
 
  a:hover {
    font-weight: bold;
+   text-decoration: underline;
+   text-decoration-style: dotted;
+   text-decoration-color: var(--col-2-dark);
+ }
+
+ header {
+   // display: flex;
+   padding: 1rem;
+   // justify-content: space-between;
+   // align-content: flex-start;
  }
