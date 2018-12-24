@@ -4,8 +4,9 @@
 
 <div class="centered">
 
+<!-- Card masonry as described here: -->
+<!-- https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb -->
   <section class="grid"> <!-- container for Masonry layout -->
-
 
     <div class="grid-item">
       <div class="content">
@@ -63,7 +64,7 @@
           <div class="card-header">Fake portfolio page</div>
           <div class="card-body">
             <p>My first static webpage within the scope of a Webdev course I took. Hosted on <%= link_to "Netlify", "https://peter-pirx.netlify.com/", :target => "_blank" %></p>
-            <%= link_to image_tag("fake-portfolio-page", class: "card-image-100"), "https://peter-pirx.netlify.com/", :target => "_blank" %>
+            <%= link_to image_tag("fake-portfolio-page.png", class: "card-image-100"), "https://peter-pirx.netlify.com/", :target => "_blank" %>
           </div>
           <div class="card-footer">
             <p>Tools: HTML, CSS, Javascript</p>
@@ -111,7 +112,7 @@
             <%= image_tag("log-screenshot.png", class: "card-image-100")%>
           </div>
           <div class="card-footer">
-            <p>Tools: Linux, Rails, Capistrano</p>
+            <p>Tools: Nginx, Phusion Passenger, Capistrano</p>
           </div>
         </article><!-- /card-7 -->
       </div>
