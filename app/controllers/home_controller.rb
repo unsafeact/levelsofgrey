@@ -6,13 +6,7 @@ class HomeController < ApplicationController
   def main
   end
 
-  def about
-  end
-
   def impressum
-  end
-
-  def privacy
   end
 
 end
