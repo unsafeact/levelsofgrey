@@ -4,12 +4,13 @@
 
 <div class="centered">
 
-<!-- Card masonry as described here: -->
+<!-- Card masonry based on: -->
 <!-- https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb -->
-  <section class="grid"> <!-- container for Masonry layout -->
+<!-- with modifications suggested in the discussion-->
+<!-- https://codepen.io/persianturtle/pen/pLNEXm -->
+  <section class="grid" id = "masonry"> <!-- container for Masonry layout -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card" id ="card-1">
           <div class="card-header">About</div>
           <div class="card-body">
@@ -20,46 +21,39 @@
             </p>
             <br>
             <p>The following cards show some private projects I have built for fun. Things you won't find here because they suck: hoverable multilevel dropdown menus and links to F*book or the <%= link_to "#birdsite", "https://mastodon.social/tags/birdsite", :target => "_blank" %>.
-
             </p>
             <%= image_tag("globe-ripples.png", class: "card-image-33")%>
           </div>
-
-        </article><!-- /card-1 -->
-      </div>
-    </div>
+        </article>
+    </div> <!-- /card-1 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
-          <div class="card-header">Lecture about mass communication</div>
+          <div class="card-header">Cognitive psychology and mass communication</div>
           <div class="card-body">
-            <p>This talk is based on a seminar I held at the University of Osnabrueck. It introduces the cognitive psychology of mass communication to a broader audience. (Link coming soon!)</p>
+            <p>Public lecture based on a seminar I gave at the University of Osnabrück. This introduction is directed at a broader audience. (Link coming after my talk on 18 January 2019 in Hamburg.)</p>
             <%= image_tag("masscomm.png", class: "card-image-100")%>
           </div>
           <div class="card-footer">
             <p>Tools: javascript, reveal.js</p>
           </div>
-        </article><!-- /card-2 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-2 -->
+
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Fake web store</div>
           <div class="card-body">
-            <p>Main achievement of the Webdev course I took. Hosted on <%= link_to "Heroku", "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %></p>
+            <p>Main achievement of a Webdev course I took. Hosted on <%= link_to "Heroku", "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %></p>
             <%= link_to image_tag("fake-web-store.png", class: "card-image-100"), "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %>
           </div>
           <div class="card-footer">
             <p>Tools: Rails, PostgreSQL, Devise, Redis, Stripe</p>
           </div>
-        </article><!-- /card-3 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-3 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Fake portfolio page</div>
           <div class="card-body">
@@ -69,12 +63,10 @@
           <div class="card-footer">
             <p>Tools: HTML, CSS, Javascript</p>
           </div>
-        </article><!-- /card-4 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-4 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Simple javascript game</div>
           <div class="card-body">
@@ -84,12 +76,10 @@
           <div class="card-footer">
             <p>Tools: phaser.js</p>
           </div>
-        </article><!-- /card-5 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-5 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Playing with the Web Audio API</div>
           <div class="card-body">
@@ -99,12 +89,10 @@
           <div class="card-footer">
             <p>Tools: javascript, web audio API</p>
           </div>
-        </article><!-- /card-6 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-6 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">This website</div>
           <div class="card-body">
@@ -114,12 +102,10 @@
           <div class="card-footer">
             <p>Tools: Nginx, Phusion Passenger, Capistrano</p>
           </div>
-        </article><!-- /card-7 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-7 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Non-digital cigar box guitar</div>
           <div class="card-body">
@@ -128,12 +114,10 @@
           <div class="card-footer">
             <p>Tools: saws, chisels, planes, drills,...</p>
           </div>
-        </article><!-- /card-8 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-8 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Non-digital mod for a Vikings fan</div>
           <div class="card-body">
@@ -142,12 +126,10 @@
           <div class="card-footer">
             <p>Tools: sandpaper, acetone, coffee & vinegar...</p>
           </div>
-        </article><!-- /card-9 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-9 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">Non-digital boards</div>
           <div class="card-body">
@@ -157,12 +139,10 @@
           <div class="card-footer">
             <p>Tools: saw, press, glue, plane,...</p>
           </div>
-        </article><!-- /card-10 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-10 -->
 
     <div class="grid-item">
-      <div class="content">
         <article class="card">
           <div class="card-header">In progress: Grandma's smart picture frame</div>
           <div class="card-body">
@@ -172,9 +152,8 @@
           <div class="card-footer">
             <p>Tools: Raspberry Pi</p>
           </div>
-        </article><!-- /card-11 -->
-      </div>
-    </div>
+        </article>
+    </div><!-- /card-11 -->
 
   </section><!-- contents -->
 

@@ -1,31 +1,75 @@
-$(document).ready(function(){
+(function() {
 
-  function resizeGridItem(item){
-    grid = document.getElementsByClassName("grid")[0];
-    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-    rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-    item.style.gridRowEnd = "span "+rowSpan;
-  }
+  window.addEventListener("turbolinks:load", resize);
+  window.addEventListener("turbolinks:resize", resize);
 
-  function resizeAllGridItems(){
-    allItems = document.getElementsByClassName("grid-item");
-    for(x=0;x<allItems.length;x++){
-      resizeGridItem(allItems[x]);
+  function resize() {
+    if($('#masonry').length >0 ){
+      console.log("loaded")
+      const grid = document.querySelector(".grid");
+      const rowHeight = getStyleValue(grid, "grid-auto-rows");
+      const rowGap = getStyleValue(grid, "grid-row-gap");
+      grid.style.gridAutoRows = "auto";
+      grid.style.alignItems = "self-start";
+      grid.querySelectorAll(".grid-item").forEach(item => {
+        item.style.gridRowEnd = `span ${Math.ceil(
+          (item.clientHeight + rowGap) / (rowHeight + rowGap)
+        )}`;
+      });
+      grid.removeAttribute("style");
     }
   }
 
-  function resizeInstance(instance){
-    item = instance.elements[0];
-    resizeGridItem(item);
+  function getStyleValue(element, style) {
+    return parseInt(window.getComputedStyle(element).getPropertyValue(style));
   }
+})();
 
-  window.onload = resizeAllGridItems();
-  window.addEventListener("resize", resizeAllGridItems);
 
-  allItems = document.getElementsByClassName("grid-item");
-  for(x=0;x<allItems.length;x++){
-    imagesLoaded( allItems[x], resizeInstance);
-  }
 
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(function(){
+//
+//   function resizeGridItem(item){
+//     grid = document.getElementsByClassName("grid")[0];
+//     rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+//     rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+//     rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+//     item.style.gridRowEnd = "span "+rowSpan;
+//   }
+//
+//   function resizeAllGridItems(){
+//     allItems = document.getElementsByClassName("grid-item");
+//     for(x=0;x<allItems.length;x++){
+//       resizeGridItem(allItems[x]);
+//     }
+//   }
+//
+//   function resizeInstance(instance){
+//     item = instance.elements[0];
+//     resizeGridItem(item);
+//   }
+//
+//   window.onload = resizeAllGridItems();
+//   window.addEventListener("resize", resizeAllGridItems);
+//
+//   allItems = document.getElementsByClassName("grid-item");
+//   for(x=0;x<allItems.length;x++){
+//     imagesLoaded( allItems[x], resizeInstance);
+//   }
+//
+// })
