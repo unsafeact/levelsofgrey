@@ -5,7 +5,6 @@
 
   function resize() {
     if($('#masonry').length >0 ){
-      console.log("loaded")
       const grid = document.querySelector(".grid");
       const rowHeight = getStyleValue(grid, "grid-auto-rows");
       const rowGap = getStyleValue(grid, "grid-row-gap");
@@ -24,52 +23,3 @@
     return parseInt(window.getComputedStyle(element).getPropertyValue(style));
   }
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function(){
-//
-//   function resizeGridItem(item){
-//     grid = document.getElementsByClassName("grid")[0];
-//     rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-//     rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-//     rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-//     item.style.gridRowEnd = "span "+rowSpan;
-//   }
-//
-//   function resizeAllGridItems(){
-//     allItems = document.getElementsByClassName("grid-item");
-//     for(x=0;x<allItems.length;x++){
-//       resizeGridItem(allItems[x]);
-//     }
-//   }
-//
-//   function resizeInstance(instance){
-//     item = instance.elements[0];
-//     resizeGridItem(item);
-//   }
-//
-//   window.onload = resizeAllGridItems();
-//   window.addEventListener("resize", resizeAllGridItems);
-//
-//   allItems = document.getElementsByClassName("grid-item");
-//   for(x=0;x<allItems.length;x++){
-//     imagesLoaded( allItems[x], resizeInstance);
-//   }
-//
-// })
