@@ -10,11 +10,13 @@
       var rowGap = getStyleValue(grid, "grid-row-gap");
       grid.style.gridAutoRows = "auto";
       grid.style.alignItems = "self-start";
-      grid.querySelectorAll(".grid-item").forEach(item => {
+
+      grid.querySelectorAll(".grid-item").forEach(function(item){
         item.style.gridRowEnd = `span ${Math.ceil(
           (item.clientHeight + rowGap) / (rowHeight + rowGap)
         )}`;
       });
+
       grid.removeAttribute("style");
     }
   }
