@@ -1,5 +1,6 @@
 (function() {
 
+  window.addEventListener("turbolinks:render", resize);
   window.addEventListener("turbolinks:load", resize);
   window.addEventListener("turbolinks:resize", resize);
 
