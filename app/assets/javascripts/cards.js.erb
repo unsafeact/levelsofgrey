@@ -12,9 +12,7 @@
       grid.style.alignItems = "self-start";
 
       grid.querySelectorAll(".grid-item").forEach(function(item){
-        item.style.gridRowEnd = `span ${Math.ceil(
-          (item.clientHeight + rowGap) / (rowHeight + rowGap)
-        )}`;
+        item.style.gridRowEnd = "span " +  Math.ceil((item.clientHeight + rowGap) / (rowHeight + rowGap));
       });
 
       grid.removeAttribute("style");
