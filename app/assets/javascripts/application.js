@@ -14,5 +14,5 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require welcome
+//= require imagesloaded
 //= require_tree .

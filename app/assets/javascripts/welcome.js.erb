@@ -1,12 +1,6 @@
-$(document).ready(function(){
-
-  // landingpage animation, only if the canvas exists
-  if($('#canvas--welcome').length >0 ){
-    welcomeAnimation()
-  }
-
+window.addEventListener("turbolinks:load", function(){
+  if($('#canvas--welcome').length > 0 ){welcomeAnimation()};
 });
-
 
 welcomeAnimation = function(){
 
@@ -98,7 +92,6 @@ welcomeAnimation = function(){
       // imgInt = imgInt - 1;
       window.requestAnimationFrame(drawCanvas);
   }
-
 
   var mysine = function(whichStep, nSteps) {
     // return( Math.sin( whichStep * Math.PI * 2 / nSteps ) / 2 + 0.5 );

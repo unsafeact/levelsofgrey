@@ -14,24 +14,41 @@
         <article class="card" id ="card-1">
           <div class="card-header">About</div>
           <div class="card-body">
-            <p>You have entered the digital playground of Uwe Friese. This is where I tinker with web development.
+            <p>Welcome!</p>
+            <br>
+            <p>You have entered the digital playground of <b>Uwe Friese</b>. This is where I tinker with web development for learning and fun. Consider everything under construction and nothing finished.
             </p>
             <br>
             <p>Technically, I am a psychologist with a PhD in cognitive science. My research focuses on the cognitive neuroscience of memory. You can find my scientific papers at <%= link_to "ResearchGate", "https://www.researchgate.net/profile/Uwe_Friese", :target => "_blank" %>.
             </p>
             <br>
-            <p>The following cards show some private projects I have built for fun. Things you won't find here because they suck: hoverable multilevel dropdown menus and links to F*book or the <%= link_to "#birdsite", "https://mastodon.social/tags/birdsite", :target => "_blank" %>.
+            <p>Things you won't find here: hoverable multilevel menus on 90 % of all page elements blocking access to 100 % of the page content.
             </p>
-            <%= image_tag("globe-ripples.png", class: "card-image-33")%>
+            <%= image_tag("typewriter.jpg", class: "card-image-100")%>
           </div>
         </article>
     </div> <!-- /card-1 -->
 
     <div class="grid-item">
         <article class="card">
+          <div class="card-header">This website</div>
+          <div class="card-body">
+            <p>I am hosting levelsofgrey.com myself on a VPS running Ubuntu Server 16.04. There are a couple of projects I want to implement once I have more experience with server administration (e.g., an XMPP server).</p>
+
+            <%= link_to image_tag("log-screenshot.png", class: "card-image-100"), root_path%>
+
+          </div>
+          <div class="card-footer">
+            <p>Tools: Nginx, Phusion Passenger, Capistrano</p>
+          </div>
+        </article>
+    </div><!-- /card-7 -->
+
+    <div class="grid-item">
+        <article class="card">
           <div class="card-header">Cognitive psychology and mass communication</div>
           <div class="card-body">
-            <p>Public lecture based on a seminar I gave at the University of Osnabrück. This introduction is directed at a broader audience. (Link coming after my talk on 18 January 2019 in Hamburg.)</p>
+            <p>Lecture based on a seminar I gave at the University of Osnabrück. This introduction is directed at a broader audience. (Link coming after my public talk on 18 January 2019 in Hamburg.)</p>
             <%= image_tag("masscomm.png", class: "card-image-100")%>
           </div>
           <div class="card-footer">
@@ -70,8 +87,8 @@
         <article class="card">
           <div class="card-header">Simple javascript game</div>
           <div class="card-body">
-            <p>Politically incorrect frogger clone featuring multiple Horsts</p>
-            <%= link_to image_tag("welcome-game.png", class: "card-image-100"), "https://", :target => "_blank" %>
+            <p>Politically incorrect Frogger clone featuring multiple Horsts (link coming soon)</p>
+            <%= image_tag("welcome-game.png", class: "card-image-100") %>
           </div>
           <div class="card-footer">
             <p>Tools: phaser.js</p>
@@ -83,7 +100,7 @@
         <article class="card">
           <div class="card-header">Playing with the Web Audio API</div>
           <div class="card-body">
-            <p>Monty Python style text-to-horst generator</p>
+            <p>Monty Python style TTH generator (link coming soon)</p>
             <%= image_tag("moo.jpg", class: "card-image-33")%>
           </div>
           <div class="card-footer">
@@ -94,22 +111,16 @@
 
     <div class="grid-item">
         <article class="card">
-          <div class="card-header">This website</div>
-          <div class="card-body">
-            <p>I am self-hosting levelsofgrey.com on a VPS running Ubuntu Server 16.04.</p>
-            <%= image_tag("log-screenshot.png", class: "card-image-100")%>
-          </div>
-          <div class="card-footer">
-            <p>Tools: Nginx, Phusion Passenger, Capistrano</p>
-          </div>
-        </article>
-    </div><!-- /card-7 -->
-
-    <div class="grid-item">
-        <article class="card">
           <div class="card-header">Non-digital cigar box guitar</div>
           <div class="card-body">
-            <%= image_tag("cbg.jpg", class: "card-image-100")%>
+            <p>3-string cigar box guitar. Check out how
+              <%= link_to "Jan Friese", "http://www.janfriese.de/", :target => "_blank" %> plays it below!</p>
+              <%= image_tag("cbg.jpg", class: "card-image-100")%>
+
+              <audio src="<%=asset_path("cgb.mp3")%>" type="audio/mpeg" controls controlsList="nodownload">
+              Your browser does not support the audio element.
+            </audio>
+
           </div>
           <div class="card-footer">
             <p>Tools: saws, chisels, planes, drills,...</p>
@@ -121,6 +132,8 @@
         <article class="card">
           <div class="card-header">Non-digital mod for a Vikings fan</div>
           <div class="card-body">
+            <p>&laquo;Warriors don’t show their heart until the axe reveals it.&raquo; --Floki</p>
+            <p></p>
             <%= image_tag("hawk-mod.png", class: "card-image-100")%>
           </div>
           <div class="card-footer">
@@ -133,7 +146,7 @@
         <article class="card">
           <div class="card-header">Non-digital boards</div>
           <div class="card-body">
-            <p>Two of ten longboards I have built in recent years.</p>
+            <p>Two of ten boards I have built in recent years: A mini cruiser for a friend and a slalom board for me.</p>
             <%= image_tag("boards.jpg", class: "card-image-100")%>
           </div>
           <div class="card-footer">
