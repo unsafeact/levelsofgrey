@@ -1,22 +1,40 @@
-window.addEventListener("turbolinks:load", resize);
-window.addEventListener("resize", resize);
+// window.addEventListener("turbolinks:load", resize);
+// window.addEventListener("resize", resize);
 
-function resize() {
-  if($('#masonry').length >0 ){
-    var grid = document.querySelector(".grid");
-    var rowHeight = getStyleValue(grid, "grid-auto-rows");
-    var rowGap = getStyleValue(grid, "grid-row-gap");
-    grid.style.gridAutoRows = "auto";
-    grid.style.alignItems = "self-start";
-
-    grid.querySelectorAll(".grid-item").forEach(function(item){
-      item.style.gridRowEnd = "span " +  Math.ceil((item.clientHeight + rowGap) / (rowHeight + rowGap));
+window.addEventListener("turbolinks:load", function(){
+  if($('#masonry').length > 0){
+    var $container = $('#masonry');
+    $container.imagesLoaded(function(){
+      resizeAll();
     });
+  };
+});
 
-    grid.removeAttribute("style");
+window.addEventListener("resize", function(){
+  if($('#masonry').length > 0 ){resizeAll()}
+});
+
+function resizeAll() {
+  console.log("resizing")
+  var grid = document.querySelector(".grid");
+  var rowHeight = getStyleValue(grid, "grid-auto-rows");
+  var rowGap = getStyleValue(grid, "grid-row-gap");
+  grid.style.gridAutoRows = "auto";
+  grid.style.alignItems = "self-start";
+
+  grid.querySelectorAll(".grid-item").forEach(function(item){
+    item.style.gridRowEnd = "span " +  Math.ceil((item.clientHeight + rowGap) / (rowHeight + rowGap));
+  });
+
+  grid.removeAttribute("style");
+
+
+  function resizeGridItem(gridItem){
+    gridItem.style.gridRowEnd = "span " +  Math.ceil((gridItem.clientHeight + rowGap) / (rowHeight + rowGap));
   }
 
   function getStyleValue(element, style) {
     return parseInt(window.getComputedStyle(element).getPropertyValue(style));
   }
+
 }

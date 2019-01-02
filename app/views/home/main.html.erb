@@ -30,7 +30,9 @@
         <article class="card">
           <div class="card-header">This website</div>
           <div class="card-body">
-            <p>I am hosting levelsofgrey.com myself on a VPS running Ubuntu Server 16.04. To do next: SSL certificate, mail server, XMPP, and maybe a Mastodon instance...</p>
+            <p>I am hosting levelsofgrey.com myself on a VPS running Ubuntu Server 16.04. To do next: SSL certificate, mail server, <%= link_to "XMPP", "https://xmpp.org/", :target => "_blank" %>, and maybe a <%= link_to "Mastodon", "https://joinmastodon.org/", :target => "_blank" %>  instance...</p>
+
+
 
             <%= link_to image_tag("log-screenshot.png", class: "card-image-100"), root_path%>
 
@@ -58,7 +60,7 @@
         <article class="card">
           <div class="card-header">Fake web store</div>
           <div class="card-body">
-            <p>Main achievement of a Webdev course I took. Hosted on <%= link_to "Heroku", "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %></p>
+            <p>Main achievement of a Webdev course I took. Hosted on <%= link_to "Heroku", "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %> (rather slow, please be patient!)</p>
             <%= link_to image_tag("fake-web-store.png", class: "card-image-100"), "https://pirx-on-rails.herokuapp.com/", :target => "_blank" %>
           </div>
           <div class="card-footer">
